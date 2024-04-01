@@ -1,33 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Changa:wght@200..800&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+* {
+  font-family: "Changa", sans-serif;
+  @apply text-[18px] lg:text-[20px]
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+
+
+html {
+  position: relative;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+.container {
+  @apply w-full px-3 md:px-6 lg:px-12 xl:px-32 m-auto
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+.nav-dimensions {
+  @apply py-3 md:py-4 lg:py-6
+}
+
+.large-btn {
+  @apply text-white  h-[60px] px-8 hover:scale-95 duration-300 rounded-[10px] font-semibold uppercase
+}
+
+.btn {
+  @apply h-[50px] flex justify-center items-center rounded-[15px] font-semibold
+}
+
+.icon {
+  @apply bg-black dark:bg-white dark:bg-opacity-5 bg-opacity-5 w-[50px] cursor-pointer hover:bg-primary hover:text-white duration-300 
+}
+
+
+.image-styles {
+  @apply w-[320px] lg:w-[460px] xl:w-[580px] border border-4 dark:border-primary rounded-[20px]
+}
+
+section {
+  @apply py-6 md:py-8 lg:py-12 xl:py-14
+}
+h1,h2,h3{
+  @apply  first-letter:capitalize
+}
+
+h1{
+  @apply text-3xl xl:text-4xl md:w-2/3 font-bold
+}
+
+h2{
+  @apply text-2xl xl:text-3xl opacity-75  font-semibold pb-8 lg:pb-12 xl:pb-14 w-full text-center md:text-start  uppercase 
+}
+
+h3{
+  @apply text-xl  lg:text-2xl font-semibold mt-4
+}
+
+p{
+  @apply text-base md:text-lg xl:text-xl opacity-60
 }
