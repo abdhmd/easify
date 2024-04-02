@@ -54,7 +54,7 @@ h1{
 }
 
 h2{
-  @apply text-xl lg:text-2xl  opacity-75  font-semibold pb-8 lg:pb-12 xl:pb-14 w-full lg:w-2/3 text-center md:text-start  uppercase 
+  @apply text-xl md:text-2xl  opacity-75  font-semibold pb-8 lg:pb-12 xl:pb-14 w-full lg:w-2/3 text-center md:text-start  uppercase 
 }
 
 h3{

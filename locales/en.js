@@ -5,6 +5,8 @@ import { FaPenNib } from "react-icons/fa";
 import { IoCreate, IoPeopleSharp } from "react-icons/io5";
 import { AiFillControl } from "react-icons/ai";
 
+
+
 export const en = {
   language: "english",
 
@@ -128,6 +130,18 @@ export const en = {
         },
       },
     ],
+  },
+
+  //CONTACT  US ======================
+  contact: {
+    title: "get in touch",
+    body: "We always look forward to communicating with our esteemed visitors. If you need our services or have any inquiries, comments, or suggestions, please feel free to contact us.",
+    social: {
+      title: "social media ",
+    },
+    email: {
+      title: "our email",
+    },
   },
 
   //ABOUT US ======================
