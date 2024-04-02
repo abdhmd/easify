@@ -6,8 +6,8 @@ const Hero = ({ data }) => {
   const { headline, subtitle, contactBtn, servicesBtn, image } = hero;
   return (
     <section id="home">
-      <div className="flex flex-col-reverse lg:flex-row items-center md:items-start justify-between mt-8">
-        <div className="flex flex-col items-center md:items-start text-center md:text-start mt-4 lg:mt-0 gap-4 ">
+      <div className="flex flex-col-reverse lg:grid lg:grid-cols-3 items-center md:items-start justify-between mt-8">
+        <div className="flex flex-col items-center md:items-start text-center md:text-start mt-4 lg:mt-0 gap-4  col-span-2">
           <h1>{headline}</h1>
           <p className="md:w-4/5">{subtitle}</p>
           <div className="flex items-center gap-2 md:mt-2 lg:mt-4 xl:mt-6">

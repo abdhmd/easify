@@ -13,12 +13,13 @@ const Service = ({ params }) => {
   const { headline, subtitle, image, contactBtn, featuresBtn } =
     service.contentData.hero;
   const features = service.contentData.description;
+  const order = service.contentData.order;
 
   return (
     <main className="container">
       <section id="home">
-        <div className="flex flex-col-reverse lg:flex-row items-center md:items-start justify-between mt-8">
-          <div className="flex flex-col items-center md:items-start text-center md:text-start mt-4 lg:mt-0 gap-4 ">
+        <div className="flex flex-col-reverse lg:grid lg:grid-cols-3 items-center md:items-start justify-between mt-8">
+          <div className=" col-span-2 flex flex-col items-center md:items-start text-center md:text-start mt-4 lg:mt-0 gap-4 ">
             <h1>{headline}</h1>
             <p className="md:w-4/5">{subtitle}</p>
             <div className="flex items-center gap-2 md:mt-2 lg:mt-4 xl:mt-6">
@@ -64,6 +65,19 @@ const Service = ({ params }) => {
             );
           })}
         </ul>
+      </section>
+
+      <section id="contact">
+        <div className="flex flex-col lg:flex-row items-center justify-between bg-primary rounded-[20px] p-6 lg:p-8 ">
+          <h2 className="opacity-100  text-center lg:text-start text-white w-fit lg:p-0">
+            {order.title}
+          </h2>
+          <Link href="/#contact">
+            <button className="large-btn bg-white !text-black ">
+              {order.contactBtn}
+            </button>
+          </Link>
+        </div>
       </section>
     </main>
   );

@@ -39,28 +39,28 @@ html {
 
 
 .image-styles {
-  @apply w-[320px] lg:w-[460px] xl:w-[580px] border border-4 dark:border-primary rounded-[20px]
+  @apply  w-[320px] h-[260px] lg:w-full   border-4 dark:border-primary rounded-[20px]
 }
 
 section {
-  @apply py-6 md:py-8 lg:py-12 xl:py-14
+  @apply py-8 md:py-10 lg:py-12 xl:py-14
 }
 h1,h2,h3{
-  @apply  first-letter:capitalize
+  @apply  first-letter:capitalize leading-snug
 }
 
 h1{
-  @apply text-3xl xl:text-4xl md:w-2/3 font-bold
+  @apply text-3xl xl:text-4xl md:w-2/3 font-bold 
 }
 
 h2{
-  @apply text-2xl xl:text-3xl opacity-75  font-semibold pb-8 lg:pb-12 xl:pb-14 w-full text-center md:text-start  uppercase 
+  @apply text-xl lg:text-2xl  opacity-75  font-semibold pb-8 lg:pb-12 xl:pb-14 w-full lg:w-2/3 text-center md:text-start  uppercase 
 }
 
 h3{
-  @apply text-xl  lg:text-2xl font-semibold mt-4
+  @apply text-lg  lg:text-xl font-bold mt-4
 }
 
 p{
-  @apply text-base md:text-lg xl:text-xl opacity-60
+  @apply text-base md:text-lg xl:text-xl opacity-60 leading-relaxed
 }

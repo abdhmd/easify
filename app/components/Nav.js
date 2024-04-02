@@ -92,7 +92,7 @@ const Nav = () => {
               } 
               
               
-              md:hidden fixed  w-full min-h-screen text-black bg-white dark:bg-secondary dark:text-white  top-0  z-[99999] px-2 transition-all duration-300`}
+              md:hidden fixed  w-full min-h-screen text-black bg-white dark:bg-secondary dark:text-white  top-0  z-[99999999999] px-2 transition-all duration-300`}
             >
               <button
                 onClick={() => {

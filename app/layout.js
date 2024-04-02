@@ -5,6 +5,7 @@ import { appWithTranslation } from "next-i18next";
 import { ContextProvider } from "@/context/DataContext";
 import Nav from "./components/Nav";
 import Footer from "./components/Footer";
+import BackToTopButton from "./components/BackToTopButton";
 function RootLayout({ children }) {
   return (
     <html>
@@ -22,6 +23,7 @@ function RootLayout({ children }) {
           <Nav />
           <main>{children}</main>
           <Footer />
+          <BackToTopButton />
         </ContextProvider>
       </body>
     </html>

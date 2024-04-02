@@ -74,7 +74,7 @@ export const en = {
               },
             ],
           },
-          " get-service": {
+          order: {
             title: "Get Your Online Store Now",
             contactBtn: "contact us",
           },
@@ -121,12 +121,22 @@ export const en = {
               },
             ],
           },
-          " get-service": {
+          order: {
             title: "To Help You Achieve Your Marketing Goals",
             contactBtn: "contact us",
           },
         },
       },
+    ],
+  },
+
+  //ABOUT US ======================
+  about: {
+    title: "abou us",
+    image: "about-image.png",
+    body: [
+      "A specialized website in providing services for creating ecommerce stores and managing funded advertising campaigns.",
+      "We strive to assist business owners in creating successful online stores and achieving their business goals by providing high-quality services at the lowest cost.",
     ],
   },
 };
