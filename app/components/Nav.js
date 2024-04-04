@@ -92,7 +92,7 @@ const Nav = () => {
               } 
               
               
-              md:hidden fixed  w-full min-h-screen text-black bg-white dark:bg-secondary dark:text-white  top-0  z-[99999999999] px-2 transition-all duration-300`}
+              md:hidden fixed  w-full min-h-screen bg-theme  top-0  z-[99999999999] px-2 transition-all duration-300`}
             >
               <button
                 onClick={() => {
@@ -147,7 +147,7 @@ const Nav = () => {
                 className={` ${language === "العربية" ? "left-0" : "right-0"} ${
                   isShow ? "flex" : "hidden"
                 }
-              absolute mt-2  bg-secondary text-white dark:bg-white dark:text-black rounded-[20px]  flex flex-col overflow-hidden
+              absolute mt-2  bg-theme rounded-[20px]  flex flex-col overflow-hidden
               `}
               >
                 {languages.map((lang) => {

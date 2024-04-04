@@ -8,13 +8,13 @@ const Services = ({ data }) => {
   const { services } = data;
   const { features } = services;
   return (
-    <section>
+    <section id="services">
       <h2>{services.title}</h2>
 
       <ul className="grid md:grid-cols-2 gap-4 lg:gap-6">
         {features.map((item) => {
           return (
-            <li key={item.slug} className="p-6 shadow-md border rounded-[20px] flex flex-col gap-2 lg:gap-4">
+            <li key={item.slug} className="p-6 bg-theme rounded-[20px] flex flex-col gap-2 lg:gap-4">
               <div className="w-[60px] h-[60px] flex justify-center items-center text-white bg-primary rounded-[20px] ">
                 <span className="scale-150">{item.icon}</span>
               </div>

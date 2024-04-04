@@ -15,9 +15,7 @@ function RootLayout({ children }) {
       </head>
       <body
         suppressHydrationWarning={true}
-        className="dark:text-white
-        bg-gradient-to-br from-pink-50 via-red-50 bg-pink-50
-        dark:bg-gradient-to-tr dark:from-slate-800 dark:via-zink-800 dark:bg-gray-800"
+        className="theme-light theme-dark"
       >
         <ContextProvider>
           <Nav />

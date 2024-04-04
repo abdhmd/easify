@@ -4,9 +4,9 @@ import Link from "next/link";
 const Contact = ({ data }) => {
   const { contact } = data;
   return (
-    <section id="contact" className="bg-secondary rounded-[20px] p-6 lg:p-10 text-white ">
+    <section id="contact" className="bg-theme rounded-[20px] p-6 lg:p-10  ">
       <h2 className="opacity-100">{contact.title}</h2>
-      <p className="text-center md:text-start w-full md:w-2/3 opacity-100">
+      <p className="text-center md:text-start w-full md:w-2/3 ">
         {contact.body}
       </p>
       <div className="flex flex-col items-center md:items-start mt-6 lg:gap-3">

@@ -17,6 +17,20 @@ html {
   scroll-behavior: smooth;
 }
 
+/* MODE ================ */
+
+.theme-light {
+  @apply bg-gradient-to-tl from-[#faf7f8] to-[#fdeaf0] text-black
+}
+
+.theme-dark {
+  @apply dark:bg-gradient-to-br dark:from-[#1C1C1C] dark:to-[#18010c] dark:text-white
+}
+
+.bg-theme {
+  @apply theme-dark theme-light border border-gray-300 dark:border-zinc-700
+}
+
 .container {
   @apply w-full px-3 md:px-6 lg:px-12 xl:px-32 m-auto
 }
@@ -26,7 +40,7 @@ html {
 }
 
 .large-btn {
-  @apply text-white  h-[60px] px-8 hover:scale-95 duration-300 rounded-[10px] font-semibold uppercase
+  @apply text-white h-[60px] px-8 hover:scale-95 duration-300 rounded-[10px] font-semibold uppercase
 }
 
 .btn {
@@ -34,33 +48,34 @@ html {
 }
 
 .icon {
-  @apply bg-black dark:bg-white dark:bg-opacity-5 bg-opacity-5 w-[50px] cursor-pointer hover:bg-primary hover:text-white duration-300 
+  @apply bg-theme w-[50px] cursor-pointer  hover:text-primary hover:border-primary duration-300
 }
 
 
 .image-styles {
-  @apply  w-[320px] h-[260px] lg:w-full   border-4 dark:border-primary rounded-[20px]
+  @apply w-[320px] h-[260px] lg:w-full border-4 dark:border-primary rounded-[20px]
 }
 
 section {
   @apply py-8 md:py-10 lg:py-12 xl:py-14
 }
-h1,h2,h3{
-  @apply  first-letter:capitalize leading-snug
+
+h1, h2, h3 {
+  @apply first-letter:capitalize leading-snug
 }
 
-h1{
-  @apply text-3xl xl:text-4xl md:w-2/3 font-bold 
+h1 {
+  @apply text-3xl xl:text-4xl md:w-2/3 font-bold
 }
 
-h2{
-  @apply text-xl md:text-2xl  opacity-75  font-semibold pb-8 lg:pb-12 xl:pb-14 w-full lg:w-2/3 text-center md:text-start  uppercase 
+h2 {
+  @apply text-xl md:text-2xl opacity-75 font-semibold pb-8 lg:pb-12 xl:pb-14 w-full lg:w-2/3 text-center md:text-start uppercase
 }
 
-h3{
-  @apply text-lg  lg:text-xl font-bold mt-4
+h3 {
+  @apply text-lg lg:text-xl font-bold mt-4
 }
 
-p{
+p {
   @apply text-base md:text-lg xl:text-xl opacity-60 leading-relaxed
 }

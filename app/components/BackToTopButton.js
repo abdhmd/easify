@@ -34,7 +34,7 @@ const BackToTopButton = () => {
 
   return (
     <div
-      className={`cursor-pointer fixed bottom-4 right-4  border-2 border-black dark:border-white  bg-black dark:bg-white dark:bg-opacity-20 bg-opacity-5 w-[50px] h-[50px] items-center justify-center   rounded-[15px]  z-50 ${
+      className={`cursor-pointer fixed bottom-4 right-4 bg-theme w-[50px] h-[50px] items-center justify-center   rounded-[15px]  z-50 ${
         isVisible ? "flex" : "hidden"
       }`}
       onClick={scrollToTop}

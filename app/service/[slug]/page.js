@@ -54,7 +54,7 @@ const Service = ({ params }) => {
             return (
               <li
                 key={item.title}
-                className="p-6 shadow-md border rounded-[20px] flex flex-col gap-2 lg:gap-4"
+                className="p-6 bg-theme rounded-[20px] flex flex-col gap-2 lg:gap-4"
               >
                 <div className="w-[60px] h-[60px] flex justify-center items-center text-white bg-primary rounded-[20px] ">
                   <span className="scale-150">{item.icon}</span>
@@ -68,12 +68,12 @@ const Service = ({ params }) => {
       </section>
 
       <section id="contact">
-        <div className="flex flex-col lg:flex-row items-center justify-between bg-primary rounded-[20px] p-6 lg:p-8 ">
-          <h2 className="opacity-100  text-center lg:text-start text-white w-fit lg:p-0">
+        <div className="flex flex-col lg:flex-row items-center justify-between bg-theme rounded-[20px] p-6 lg:p-8 ">
+          <h2 className="opacity-100  text-center lg:text-start  w-fit lg:p-0">
             {order.title}
           </h2>
           <Link href="/#contact">
-            <button className="large-btn bg-white !text-black ">
+            <button className="large-btn bg-primary ">
               {order.contactBtn}
             </button>
           </Link>

@@ -11,8 +11,8 @@ export default function Home() {
     <main className="container">
       <Hero data={content} />
       <Services data={content} />
-      <Contact data={content} />
       <About data={content} />
+      <Contact data={content} />
     </main>
   );
 }
