@@ -146,7 +146,11 @@ export const en = {
 
   //ABOUT US ======================
   about: {
+<<<<<<< HEAD
     title: "abou us",
+=======
+    title: "about us",
+>>>>>>> e07b5c6 (easify v 1.0.4)
     image: "about-image.png",
     body: [
       "A specialized website in providing services for creating ecommerce stores and managing funded advertising campaigns.",
