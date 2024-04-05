@@ -58,6 +58,7 @@ const Hero = ({ data }) => {
               </motion.button>
             </Link>
           </motion.div>
+          {/* just a comment  */}
         </div>
         <motion.div
           initial="hidden"
