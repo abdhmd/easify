@@ -9,13 +9,10 @@
   @apply text-[18px] lg:text-[20px]
 }
 
-<<<<<<< HEAD
 
-=======
 body {
   font-family: "Changa", sans-serif;
 }
->>>>>>> e07b5c6 (easify v 1.0.4)
 
 html {
   position: relative;
@@ -54,11 +51,7 @@ html {
 }
 
 .icon {
-<<<<<<< HEAD
-  @apply bg-theme w-[50px] cursor-pointer  hover:text-primary hover:border-primary duration-300
-=======
   @apply bg-theme w-[50px] cursor-pointer hover:text-primary hover:border-primary duration-300
->>>>>>> e07b5c6 (easify v 1.0.4)
 }
 
 
@@ -71,11 +64,7 @@ section {
 }
 
 h1, h2, h3 {
-<<<<<<< HEAD
   @apply first-letter:capitalize leading-snug
-=======
-  @apply capitalize leading-snug
->>>>>>> e07b5c6 (easify v 1.0.4)
 }
 
 h1 {
@@ -87,11 +76,7 @@ h2 {
 }
 
 h3 {
-<<<<<<< HEAD
   @apply text-lg lg:text-xl font-bold mt-4
-=======
-  @apply text-lg lg:text-xl font-bold mt-4 w-full
->>>>>>> e07b5c6 (easify v 1.0.4)
 }
 
 p {
