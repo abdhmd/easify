@@ -16,6 +16,9 @@ const Nav = () => {
   // ANIMATION ====================================
   const {
     logoAnimation,
+    slideAnimation,
+    slideItem,
+    slideBoxAnimation,
     iconsAnimation,
     iconItem,
     langAnimation,
@@ -69,22 +72,28 @@ const Nav = () => {
           {/* MENU LARGE SCREEN ================================= */}
 
           <div className="hidden md:flex items-center px-6">
-            <ul className="flex items-center  flex-row gap-2 ">
+            <motion.ul
+              initial="hidden"
+              whileInView="show"
+              variants={iconsAnimation}
+              className="flex items-center  flex-row gap-2 "
+            >
               {content.nav.map((data) => {
                 return (
                   <Link key={data.name} href={data.link}>
-                    <li
+                    <motion.li
+                      variants={iconItem}
                       onClick={() => {
                         setMenuShow(!menuShow);
                       }}
                       className="h-[60px] px-3 flex items-center rounded-[20px] uppercase hover:text-primary  duration-300 hover:font-semibold"
                     >
                       {data.name}
-                    </li>
+                    </motion.li>
                   </Link>
                 );
               })}
-            </ul>
+            </motion.ul>
           </div>
           {/* MENU SMALL SCREEN ================================= */}
           <div
@@ -99,8 +108,19 @@ const Nav = () => {
             } 
               
               
-              container md:hidden fixed  w-full min-h-screen bg-theme  top-0  z-[99999999999] px-2 transition-all duration-300`}
+              container md:hidden fixed overflow-hidden  w-full min-h-screen bg-theme  top-0  z-[99999999999] px-2 transition-all duration-300`}
           >
+            {/* ANIMATION BOX  */}
+            <motion.div
+              initial="hidden"
+              whileInView="show"
+              variants={slideBoxAnimation}
+              className={`
+              absolute w-full min-h-screen bg-primary  top-0
+              ${language === "العربية" ? "right-0" : "left-0"}
+              `}
+            ></motion.div>
+
             <button
               onClick={() => {
                 setMenuShow(!menuShow);
@@ -110,22 +130,28 @@ const Nav = () => {
               <IoClose className="text-xl" />
             </button>
 
-            <ul className="flex flex-col gap-6 mt-16">
+            <motion.ul
+              initial="hidden"
+              whileInView="show"
+              variants={slideAnimation}
+              className="flex flex-col gap-6 mt-16"
+            >
               {content.nav.map((data) => {
                 return (
                   <Link key={data.name} href={data.link}>
-                    <li
+                    <motion.li
+                      variants={slideItem}
                       onClick={() => {
                         setMenuShow(!menuShow);
                       }}
                       className="  flex items-center rounded-[20px] uppercase hover:text-primary  duration-300 hover:font-semibold"
                     >
                       {data.name}
-                    </li>
+                    </motion.li>
                   </Link>
                 );
               })}
-            </ul>
+            </motion.ul>
           </div>
           {/* NAV ICONS =================================== */}
           <motion.div
@@ -154,8 +180,22 @@ const Nav = () => {
               }}
               className="btn icon"
             >
-              <IoIosMoon className="text-xl scale-100  w-full dark:w-0 dark:scale-0 dark:-rotate-180 duration-500" />
-              <IoSunny className="text-xl dark:scale-100 dark:w-full w-0 scale-0 rotate-180 dark:rotate-0 duration-500" />
+              <motion.span
+                initial="hidden"
+                whileInView="show"
+                variants={modeAnimation}
+                className="flex dark:hidden"
+              >
+                <IoIosMoon className="text-xl  " />
+              </motion.span>
+              <motion.span
+                initial="hidden"
+                whileInView="show"
+                variants={modeAnimation}
+                className="dark:flex hidden"
+              >
+                <IoSunny className="text-xl  " />
+              </motion.span>
             </motion.button>
 
             {/* LANGUAGE BUTTON motion.================================= */}
@@ -170,15 +210,15 @@ const Nav = () => {
               </div>
 
               <motion.ul
-                layout
                 initial="hidden"
                 whileInView="show"
                 variants={langAnimation}
-                className={` ${language === "العربية" ? "left-0" : "right-0"} ${
-                  isShow ? "flex" : "hidden"
-                }
+                className={` ${language === "العربية" ? "left-0" : "right-0"} 
                 z-[999]
-              absolute mt-2  bg-theme rounded-[20px]  flex flex-col overflow-hidden
+                rounded-[20px]
+              absolute mt-2  duration-300 ${
+                isShow ? "  visible " : " hidden "
+              } bg-theme   flex flex-col overflow-hidden
               `}
               >
                 {languages.map((lang) => {
@@ -189,7 +229,8 @@ const Nav = () => {
                         changeLanguage(lang);
                         setIsShow(!isShow);
                       }}
-                      className="flex justify-center items-center h-[60px] px-6 hover:font-semibold hover:bg-primary hover:text-white"
+                      className="
+                      flex justify-center items-center h-[60px] px-6 hover:font-semibold hover:bg-primary hover:text-white"
                       key={lang}
                     >
                       {lang}
