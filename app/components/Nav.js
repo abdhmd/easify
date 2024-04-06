@@ -71,13 +71,13 @@ const Nav = () => {
         <div className="flex-1 flex justify-end md:justify-between items-center ">
           {/* MENU LARGE SCREEN ================================= */}
 
-          <div className="hidden md:flex items-center px-6">
-            <motion.ul
-              initial="hidden"
-              whileInView="show"
-              variants={iconsAnimation}
-              className="flex items-center  flex-row gap-2 "
-            >
+          <motion.div
+            initial="hidden"
+            whileInView="show"
+            variants={iconsAnimation}
+            className="hidden md:flex items-center px-6"
+          >
+            <ul className="flex items-center  flex-row gap-2 ">
               {content.nav.map((data) => {
                 return (
                   <Link key={data.name} href={data.link}>
@@ -93,8 +93,8 @@ const Nav = () => {
                   </Link>
                 );
               })}
-            </motion.ul>
-          </div>
+            </ul>
+          </motion.div>
           {/* MENU SMALL SCREEN ================================= */}
           <div
             className={`${
