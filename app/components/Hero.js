@@ -5,6 +5,8 @@ import Link from "next/link";
 const Hero = ({ data }) => {
   const { hero } = data;
   const { headline, subtitle, contactBtn, servicesBtn, image } = hero;
+  
+  // ANIMATION ==============================
   const {
     headlineAnimation,
     imageAnimation,

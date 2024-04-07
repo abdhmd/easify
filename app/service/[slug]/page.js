@@ -4,6 +4,13 @@ import { DataContext } from "@/context/DataContext";
 import { useContext } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import {
+  heroAnimation,
+  titleAnimation,
+  servicesAnimation,
+} from "@/lib/animation";
+import { motion } from "framer-motion";
+
 const Service = ({ params }) => {
   const { content } = useContext(DataContext);
 
@@ -15,25 +22,74 @@ const Service = ({ params }) => {
   const features = service.contentData.description;
   const order = service.contentData.order;
 
+  // ANIMATION ==============================
+  const {
+    headlineAnimation,
+    imageAnimation,
+    subtitleAnimation,
+    btnAnimation,
+    btnItem,
+  } = heroAnimation;
+
+  const {
+    serviceAnimation,
+    serviceItem,
+    serviceTitleAnimation,
+    serviceDescriptionAnimation,
+    iconsAnimation,
+    iconItem,
+  } = servicesAnimation;
+  const { titleItemAnimation } = titleAnimation;
+
   return (
     <main className="container">
       <section id="home">
         <div className="flex flex-col-reverse lg:grid lg:grid-cols-3 items-center md:items-start justify-between mt-8">
           <div className=" col-span-2 flex flex-col items-center md:items-start text-center md:text-start mt-4 lg:mt-0 gap-4 ">
-            <h1>{headline}</h1>
-            <p className="md:w-4/5">{subtitle}</p>
-            <div className="flex items-center gap-2 md:mt-2 lg:mt-4 xl:mt-6">
+            <motion.h1
+              initial="hidden"
+              whileInView="show"
+              variants={headlineAnimation}
+            >
+              {headline}
+            </motion.h1>
+            <motion.p
+              initial="hidden"
+              whileInView="show"
+              variants={subtitleAnimation}
+              className="md:w-4/5"
+            >
+              {subtitle}
+            </motion.p>
+            <motion.div
+              initial="hidden"
+              whileInView="show"
+              variants={btnAnimation}
+              className="flex items-center gap-2 md:mt-2 lg:mt-4 xl:mt-6"
+            >
               <Link href={`${params.slug}/#contact`}>
-                <button className="large-btn bg-primary  ">{contactBtn}</button>
+                <motion.button
+                  variants={btnItem}
+                  className="large-btn bg-primary  "
+                >
+                  {contactBtn}
+                </motion.button>
               </Link>
               <Link href={`${params.slug}/#features`}>
-                <button className="large-btn bg-secondary dark:text-black  dark:bg-white">
+                <motion.button
+                  variants={btnItem}
+                  className="large-btn bg-secondary dark:text-black  dark:bg-white"
+                >
                   {featuresBtn}
-                </button>
+                </motion.button>
               </Link>
-            </div>
+            </motion.div>
           </div>
-          <div>
+          <motion.div
+            initial="hidden"
+            whileInView="show"
+            variants={imageAnimation}
+          >
             <Image
               src={`/${image}`}
               alt="hero image"
@@ -42,29 +98,61 @@ const Service = ({ params }) => {
               height={220}
               className="image-styles"
             />
-          </div>
+          </motion.div>
         </div>
       </section>
 
       <section id="features">
-        <h2>{features.title}</h2>
+        <motion.h2
+          initial="hidden"
+          whileInView="show"
+          variants={titleItemAnimation}
+        >
+          {features.title}
+        </motion.h2>
 
-        <ul className="grid md:grid-cols-2  gap-4 lg:gap-6 ">
+        <motion.ul
+          initial="hidden"
+          whileInView="show"
+          variants={serviceAnimation}
+          className="grid md:grid-cols-2  gap-4 lg:gap-6 "
+        >
           {features.distinctive.map((item) => {
             return (
-              <li
+              <motion.li
+                variants={serviceItem}
                 key={item.title}
                 className="p-6 bg-theme rounded-[20px] flex flex-col gap-2 lg:gap-4"
               >
-                <div className="w-[60px] h-[60px] flex justify-center items-center text-white bg-primary rounded-[20px] ">
-                  <span className="scale-150">{item.icon}</span>
-                </div>
-                <h3>{item.title}</h3>
-                <p className="">{item.body}</p>
-              </li>
+                <motion.div
+                  initial="hidden"
+                  whileInView="show"
+                  variants={iconsAnimation}
+                  className="w-[60px] h-[60px] flex justify-center items-center text-white bg-primary rounded-[20px] "
+                >
+                  <motion.span variants={iconItem} className="scale-150">
+                    {item.icon}
+                  </motion.span>
+                </motion.div>
+                <motion.h3
+                  initial="hidden"
+                  whileInView="show"
+                  variants={serviceTitleAnimation}
+                >
+                  {item.title}
+                </motion.h3>
+                <motion.p
+                  initial="hidden"
+                  whileInView="show"
+                  variants={serviceDescriptionAnimation}
+                  className=""
+                >
+                  {item.body}
+                </motion.p>
+              </motion.li>
             );
           })}
-        </ul>
+        </motion.ul>
       </section>
 
       <section id="contact">

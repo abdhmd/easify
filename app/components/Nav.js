@@ -20,10 +20,12 @@ const Nav = () => {
     slideItem,
     slideBoxAnimation,
     iconsAnimation,
+    iconAnimation,
     iconItem,
+    menuAnimation,
+    menuItem,
     langAnimation,
     langItem,
-    modeAnimation,
   } = navAnimation;
 
   // CHANGE LANGUAGE  =============================
@@ -57,6 +59,8 @@ const Nav = () => {
   return (
     <>
       <nav className="container  nav-dimensions flex justify-between items-center">
+        {/* LOGO ================================= */}
+
         <motion.div
           initial="hidden"
           whileInView="show"
@@ -71,30 +75,30 @@ const Nav = () => {
         <div className="flex-1 flex justify-end md:justify-between items-center ">
           {/* MENU LARGE SCREEN ================================= */}
 
-          <motion.div
-            initial="hidden"
-            whileInView="show"
-            variants={iconsAnimation}
-            className="hidden md:flex items-center px-6"
-          >
-            <ul className="flex items-center  flex-row gap-2 ">
+          <div className="hidden md:visible md:flex items-center px-6">
+            <motion.ul
+              initial="hidden"
+              animate="show"
+              variants={menuAnimation}
+              className="flex items-center  flex-row gap-2 "
+            >
               {content.nav.map((data) => {
                 return (
-                  <Link key={data.name} href={data.link}>
+                  <Link href={data.link} key={data.name}>
                     <motion.li
-                      variants={iconItem}
+                      variants={menuItem}
                       onClick={() => {
                         setMenuShow(!menuShow);
                       }}
-                      className="h-[60px] px-3 flex items-center rounded-[20px] uppercase hover:text-primary  duration-300 hover:font-semibold"
+                      className="h-[60px] px-3 flex  items-center rounded-[20px] uppercase hover:text-primary  duration-300 hover:font-semibold"
                     >
                       {data.name}
                     </motion.li>
                   </Link>
                 );
               })}
-            </ul>
-          </motion.div>
+            </motion.ul>
+          </div>
           {/* MENU SMALL SCREEN ================================= */}
           <div
             className={`${
@@ -116,7 +120,7 @@ const Nav = () => {
               whileInView="show"
               variants={slideBoxAnimation}
               className={`
-              absolute w-full min-h-screen bg-primary  top-0
+              absolute w-full min-h-screen bg-primary  top-0 
               ${language === "العربية" ? "right-0" : "left-0"}
               `}
             ></motion.div>
@@ -127,7 +131,13 @@ const Nav = () => {
               }}
               className="btn icon mt-3"
             >
-              <IoClose className="text-xl" />
+              <motion.span
+                initial="hidden"
+                whileInView="show"
+                variants={iconAnimation}
+              >
+                <IoClose className="text-xl" />
+              </motion.span>
             </button>
 
             <motion.ul
@@ -168,7 +178,13 @@ const Nav = () => {
               }}
               className="btn icon md:hidden"
             >
-              <IoMdMenu className="text-xl" />
+              <motion.span
+                initial="hidden"
+                whileInView="show"
+                variants={iconAnimation}
+              >
+                <IoMdMenu className="text-xl" />
+              </motion.span>
             </motion.button>
 
             {/* MODE BUTTON ================================= */}
@@ -183,7 +199,7 @@ const Nav = () => {
               <motion.span
                 initial="hidden"
                 whileInView="show"
-                variants={modeAnimation}
+                variants={iconAnimation}
                 className="flex dark:hidden"
               >
                 <IoIosMoon className="text-xl  " />
@@ -191,7 +207,7 @@ const Nav = () => {
               <motion.span
                 initial="hidden"
                 whileInView="show"
-                variants={modeAnimation}
+                variants={iconAnimation}
                 className="dark:flex hidden"
               >
                 <IoSunny className="text-xl  " />
@@ -206,7 +222,13 @@ const Nav = () => {
                 }}
                 className="btn icon"
               >
-                <IoLanguageOutline className="text-xl" />
+                <motion.span
+                  initial="hidden"
+                  whileInView="show"
+                  variants={iconAnimation}
+                >
+                  <IoLanguageOutline className="text-xl" />
+                </motion.span>
               </div>
 
               <motion.ul
