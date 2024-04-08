@@ -4,7 +4,6 @@ import { DataContext } from "@/context/DataContext";
 import { useContext } from "react";
 import { motion } from "framer-motion";
 import { titleAnimation, servicesAnimation } from "@/lib/animation";
-import { setRequestMeta } from "next/dist/server/request-meta";
 
 const Services = ({ data }) => {
   const { language } = useContext(DataContext);

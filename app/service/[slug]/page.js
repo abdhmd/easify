@@ -157,13 +157,23 @@ const Service = ({ params }) => {
 
       <section id="contact">
         <div className="flex flex-col lg:flex-row items-center justify-between bg-theme rounded-[20px] p-6 lg:p-8 ">
-          <h2 className="opacity-100  text-center lg:text-start  w-fit lg:p-0">
+          <motion.h2
+            initial="hidden"
+            whileInView="show"
+            variants={titleAnimation}
+            className="opacity-100  text-center lg:text-start  w-fit lg:p-0"
+          >
             {order.title}
-          </h2>
+          </motion.h2>
           <Link href="/#contact">
-            <button className="large-btn bg-primary ">
-              {order.contactBtn}
-            </button>
+            <motion.button
+              initial="hidden"
+              whileInView="show"
+              variants={btnAnimation}
+              className="large-btn bg-primary "
+            >
+              <motion.span variants={btnItem}>{order.contactBtn}</motion.span>
+            </motion.button>
           </Link>
         </div>
       </section>
