@@ -64,7 +64,7 @@ section {
 }
 
 h1, h2, h3 {
-  @apply first-letter:capitalize leading-snug
+  @apply capitalize leading-snug
 }
 
 h1 {

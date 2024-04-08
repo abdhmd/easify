@@ -1,6 +1,6 @@
 import { email, socialMedia } from "@/lib/data";
 import Link from "next/link";
-import { contactAnimation, titleAnimation } from "@/lib/animation";
+import { contactAnimation, titleAnimation } from "../../lib/Animation";
 import { motion } from "framer-motion";
 
 const Contact = ({ data }) => {

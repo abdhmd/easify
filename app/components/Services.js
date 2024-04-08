@@ -3,7 +3,7 @@ import { BsArrowLeft, BsArrowRight } from "react-icons/bs";
 import { DataContext } from "@/context/DataContext";
 import { useContext } from "react";
 import { motion } from "framer-motion";
-import { titleAnimation, servicesAnimation } from "@/lib/animation";
+import { titleAnimation, servicesAnimation } from "../../lib/Animation";
 
 const Services = ({ data }) => {
   const { language } = useContext(DataContext);

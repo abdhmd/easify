@@ -8,7 +8,7 @@ import {
   heroAnimation,
   titleAnimation,
   servicesAnimation,
-} from "@/lib/animation";
+} from "../../../lib/Animation";
 import { motion } from "framer-motion";
 
 const Service = ({ params }) => {

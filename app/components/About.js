@@ -2,7 +2,7 @@ import Image from "next/image";
 import footerLogoLight from "../../public/footer-logo-light.svg";
 import footerLogoDark from "../../public/footer-logo-dark.svg";
 import { motion } from "framer-motion";
-import { titleAnimation, aboutAniamtion } from "@/lib/animation";
+import { titleAnimation, aboutAniamtion } from "../../lib/Animation";
 const About = ({ data }) => {
   const { about } = data;
   // ANIMATION ==============================

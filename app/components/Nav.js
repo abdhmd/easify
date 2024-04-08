@@ -10,7 +10,7 @@ import { IoClose, IoLanguageOutline, IoSunny } from "react-icons/io5";
 import { languages } from "@/lib/data";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { navAnimation } from "@/lib/animation";
+import { navAnimation } from "../../lib/Animation";
 const Nav = () => {
   const [menuShow, setMenuShow] = useState(false);
   // ANIMATION ====================================
