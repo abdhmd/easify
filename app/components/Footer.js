@@ -113,7 +113,7 @@ const Footer = () => {
         <p className="mt-1.5 text-2xl">&copy; </p>
         <p>{currentYear}</p>
       </motion.div>
-    </سثؤفه>
+    </section>
   );
 };
 
