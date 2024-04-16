@@ -26,7 +26,7 @@ const Footer = () => {
   } = footerAnimation;
 
   return (
-    <footer className="container">
+    <section className="container">
       <div className="flex flex-col lg:flex-row  items-center justify-between gap-6">
         {/* FOOTER LOGO ================== */}
         <Link href={"/"} className="w-[120px] m-0">
@@ -113,7 +113,7 @@ const Footer = () => {
         <p className="mt-1.5 text-2xl">&copy; </p>
         <p>{currentYear}</p>
       </motion.div>
-    </footer>
+    </سثؤفه>
   );
 };
 
